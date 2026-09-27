@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efe Şuşutgil - Kişisel Web Sitesi</title>
+    <title>Efe Şuşutgil | Kişisel Web Sitesi</title>
+    <!-- Google Fonts & FontAwesome İkonları -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: #0b0f19;
+            color: #e2e8f0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,47 +26,51 @@
             padding: 20px;
         }
 
-        .card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 30px;
-            max-width: 480px;
+        .container {
             width: 100%;
+            max-width: 480px;
+            background: #111827;
+            border: 1px solid #1f293d;
+            border-radius: 20px;
+            padding: 35px 25px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
-        .avatar {
+        .profile-img {
             width: 110px;
             height: 110px;
             border-radius: 50%;
-            margin-bottom: 20px;
-            border: 3px solid #38bdf8;
             object-fit: cover;
+            border: 3px solid #3b82f6;
+            padding: 3px;
+            background: #1e293b;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
         }
 
         h1 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
+            font-size: 1.75rem;
+            font-weight: 700;
             color: #f8fafc;
+            margin-bottom: 6px;
         }
 
-        .subtitle {
-            color: #38bdf8;
+        .title {
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            color: #60a5fa;
             font-weight: 500;
+            margin-bottom: 18px;
         }
 
-        p {
+        .bio {
+            font-size: 0.9rem;
             color: #94a3b8;
-            font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 25px;
         }
 
-        .tags {
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
@@ -70,56 +78,191 @@
             margin-bottom: 25px;
         }
 
-        .tag {
-            background: #334155;
-            color: #e2e8f0;
-            padding: 6px 12px;
-            border-radius: 20px;
+        .skill-tag {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 12px;
             font-size: 0.8rem;
+            font-weight: 500;
         }
 
-        .links {
+        .section-title {
+            font-size: 1.1rem;
+            color: #f8fafc;
+            margin: 20px 0 15px 0;
+            text-align: left;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .projects-container {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            margin-bottom: 25px;
         }
 
-        .btn {
-            background: #2563eb;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
+        .project-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: left;
+            transition: all 0.25s ease;
+        }
+
+        .project-header {
+            padding: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
             font-weight: 600;
-            transition: background 0.2s ease;
+            font-size: 0.95rem;
+            color: #f8fafc;
         }
 
-        .btn:hover {
-            background: #1d4ed8;
+        .project-header:hover {
+            background: #2563eb;
+        }
+
+        .project-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background: #0f172a;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .project-content-inner {
+            padding: 14px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #1e293b;
+            color: #f8fafc;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid #334155;
+            transition: all 0.25s ease;
+        }
+
+        .link-btn:hover {
+            background: #2563eb;
+            border-color: #3b82f6;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 0.75rem;
+            color: #64748b;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <img class="avatar" src="profil.jpg" alt="Efe Şuşutgil">
-        
+    <div class="container">
+        <img class="profile-img" src="https://api.dicebear.com/7.x/bottts/svg?seed=Efe" alt="Efe Şuşutgil">
+
         <h1>Efe Şuşutgil</h1>
-        <div class="subtitle">Yazılım & Tasarım Projeleri</div>
-        
-        <p>Yazılım geliştirme, Python ile oyun yapımı, HTML/CSS ve 3D tasarımla ilgileniyorum. Yeni teknoloji projeleri üretmeyi seviyorum.</p>
+        <div class="title">Yazılım & Oyun Geliştirici</div>
 
-        <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pygame</span>
-            <span class="tag">HTML5 / CSS3</span>
-            <span class="tag">3D Tasarım</span>
+        <p class="bio">
+            Yazılım geliştirme, Python ile oyun yapımı, HTML/CSS web tasarımı ve 3D modelleme ile ilgileniyorum.
+        </p>
+
+        <div class="skills-container">
+            <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="skill-tag"><i class="fa-solid fa-gamepad"></i> Pygame</span>
+            <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</span>
+            <span class="skill-tag"><i class="fa-solid fa-cube"></i> 3D Tasarım</span>
         </div>
 
-        <div class="links">
-            <a href="https://github.com" class="btn" target="_blank">GitHub Projelerim</a>
+        <div class="section-title">
+            <i class="fa-solid fa-code-branch" style="color: #60a5fa;"></i> Çalışmalarım & Projelerim
         </div>
+
+        <div class="projects-container">
+            <!-- Proje 1 -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject(this)">
+                    <span><i class="fa-solid fa-gamepad"></i> HeyHay (Ses Tahmin Oyunu)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="project-content">
+                    <div class="project-content-inner">
+                        Python ve Pygame kütüphanesi kullanılarak geliştirilmiş, özel ses efektleri ve görseller içeren 2D ses tahmin oyunu.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proje 2 -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject(this)">
+                    <span><i class="fa-solid fa-cube"></i> 3D Baskı ve Modelleme</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="project-content">
+                    <div class="project-content-inner">
+                        Revit ve 3D modelleme yazılımları ile tasarlanmış, PLA filament ile üretilen özel 3D ürünler ve aparatlar.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proje 3 -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject(this)">
+                    <span><i class="fa-solid fa-globe"></i> Kişisel Web Sitesi</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="project-content">
+                    <div class="project-content-inner">
+                        HTML5, CSS3 ve JavaScript kullanılarak hazırlanmış, GitHub Pages üzerinde yayınlanan kişisel portfolyo sitesi.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-container">
+            <a href="https://github.com/efesusut06-design" class="link-btn" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub Profilim
+            </a>
+        </div>
+
+        <footer>
+            © 2026 Efe Şuşutgil • Tüm Hakları Saklıdır
+        </footer>
     </div>
 
+    <!-- Tıklama İşlevi (JavaScript) -->
+    <script>
+        function toggleProject(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.fa-chevron-down');
+
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
 </body>
+</html>
 </html>
