@@ -3,207 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efe Şuşutgil - Akademik Portfolyo</title>
-    <!-- FontAwesome İkonları & Google Font -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Efe Şuşutgil - 3D Tasarım Uzmanı & Teknoloji Geliştiricisi</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #0d1117;
-            color: #c9d1d9;
+            background-color: #f8fafc;
+            color: #334155;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px 15px;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .container {
-            width: 100%;
-            max-width: 540px;
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 20px;
-            padding: 35px 28px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        }
-
-        .header {
+        /* Header / Başlık Alanı */
+        header {
+            background-color: #ffffff;
+            padding: 50px 20px 30px;
             text-align: center;
-            margin-bottom: 24px;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        /* Robot yerine Baş Harflerden Oluşan Şık Avatar */
-        .avatar-initials {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1f6feb, #238636);
-            color: #ffffff;
-            font-size: 2.2rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px auto;
-            border: 2px solid #30363d;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         h1 {
-            color: #f0f6fc;
-            font-size: 1.65rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #0f172a;
             font-weight: 700;
-            margin-bottom: 4px;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
         }
 
-        .subtitle {
-            color: #58a6ff;
-            font-size: 0.88rem;
+        .sub-header-title {
+            color: #d97706;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .header-line {
+            width: 60px;
+            height: 3px;
+            background-color: #d97706;
+            margin: 0 auto 20px;
+            border-radius: 2px;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: #64748b;
             font-weight: 500;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
 
-        .welcome-text {
-            background: #21262d;
-            border-left: 4px solid #58a6ff;
-            border-radius: 8px;
-            padding: 18px;
-            font-size: 0.86rem;
-            line-height: 1.65;
-            color: #8b949e;
-            margin-bottom: 26px;
+        /* Ana İçerik Konteynırı */
+        main {
+            max-width: 860px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Beyaz Kartlar */
+        .card {
+            background-color: #ffffff;
+            border-radius: 4px;
+            padding: 35px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid #d97706;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title::after {
+            content: "";
+            flex: 1;
+            margin-left: 15px;
+            height: 1px;
+            background-color: #e2e8f0;
+        }
+
+        .summary-text {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: #475569;
             text-align: justify;
         }
 
-        .section-title {
-            color: #f0f6fc;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 8px;
-        }
-
-        .info-grid {
+        /* Izgara Düzeni (Akademik Profil) */
+        .grid-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 26px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
         }
 
-        .info-card {
-            background: #21262d;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 14px;
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .info-label {
+        .grid-item {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 16px 12px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .grid-label {
             font-size: 0.72rem;
-            color: #8b949e;
-            margin-bottom: 4px;
+            font-weight: 700;
+            color: #d97706;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-weight: 600;
+            margin-bottom: 6px;
         }
 
-        .info-value {
+        .grid-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* Kampüs Alanı */
+        .campus-content {
+            text-align: center;
+        }
+
+        .campus-description {
             font-size: 0.9rem;
-            color: #f0f6fc;
-            font-weight: 600;
-        }
-
-        .campus-box {
-            background: #21262d;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 16px;
+            color: #64748b;
             margin-bottom: 20px;
         }
 
-        .campus-box p {
-            font-size: 0.83rem;
-            color: #8b949e;
-            line-height: 1.55;
-            margin-top: 8px;
+        .badge-location {
+            display: inline-block;
+            background-color: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-bottom: 12px;
         }
 
-        .footer {
+        .location-subtext {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Footer / Alt Bilgi */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
             text-align: center;
-            font-size: 0.75rem;
-            color: #484f58;
-            margin-top: 25px;
+            padding: 20px;
+            font-size: 0.8rem;
+            border-top: 3px solid #d97706;
+            margin-top: 40px;
+        }
+
+        footer span {
+            color: #cbd5e1;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header">
-            <!-- Profil fotosu yerine sade ve kurumsal EŞ harfleri -->
-            <div class="avatar-initials">EŞ</div>
+    <!-- Başlık Alanı -->
+    <header>
+        <div class="header-content">
             <h1>Efe Şuşutgil</h1>
-            <div class="subtitle">Akademik Portfolyo & Dijital Üretim</div>
+            <div class="sub-header-title">3D Tasarım Uzmanı & Teknoloji Geliştiricisi</div>
+            <div class="header-line"></div>
+            <p class="tagline">Yenilikçi vizyon, 3D modelleme tutkusu ve geleceği şekillendiren üretim yeteneği.</p>
         </div>
+    </header>
 
-        <!-- Giriş / Karşılama Metni -->
-        <div class="welcome-text">
-            Saygıdeğer ziyaretçiler, portfolyoma hoş geldiniz. Ben Efe Şuşutgil. Teknolojiye ve üretime olan tutkumla, hayal gücümü 3D yazıcı teknolojileriyle somut gerçeğe dönüştürüyorum. Dijital dünyadaki karmaşık tasarımları fiziksel dünyada var eden yenilikçi bir "maker" ruhuna sahibim. Analitik düşünme yeteneğim ve detaylara verdiğim önem sayesinde, mekanik tasarımlarda ve prototip üretim süreçlerinde her zaman en yüksek kaliteyi hedefliyorum. Sadece tüketen değil, aynı zamanda üreten bir neslin temsilcisi olarak, mühendislik ve inovasyon alanında okulumu en iyi şekilde temsil ediyorum.
-        </div>
+    <!-- Ana Gövde -->
+    <main>
+        <!-- Yönetici Özeti -->
+        <section class="card">
+            <h2 class="card-title">Yönetici Özeti & Vizyon</h2>
+            <p class="summary-text">
+                Saygıdeğer ziyaretçiler, portfolyoma hoş geldiniz. Ben Efe Şuşutgil. Teknolojiye ve üretime olan tutkumla, hayal gücümü 3D yazıcı teknolojileriyle somut gerçeğe dönüştürüyorum. Dijital dünyadaki karmaşık tasarımları fiziksel dünyada var eden yenilikçi bir "maker" ruhuna sahibim. Analitik düşünme yeteneğim ve detaylara verdiğim önem sayesinde, mekanik tasarımlarda ve prototip üretim süreçlerinde her zaman en yüksek kaliteyi hedefliyorum. Sadece tüketen değil, aynı zamanda üreten bir neslin temsilcisi olarak, mühendislik ve inovasyon alanında okulumu en iyi şekilde temsil ediyorum.
+            </p>
+        </section>
 
-        <!-- Akademik Profil & Uzmanlık -->
-        <div class="section-title">
-            <i class="fa-solid fa-graduation-cap" style="color: #58a6ff;"></i> Akademik Profil & Uzmanlık
-        </div>
-
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="info-label">Eğitim Kurumu</div>
-                <div class="info-value">Şehit Hamza Irmak Ortaokulu</div>
+        <!-- Akademik Profil -->
+        <section class="card">
+            <h2 class="card-title">Akademik Profil & Uzmanlık</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="grid-label">Eğitim Kurumu</div>
+                    <div class="grid-value">Şehit Hamza Irmak Ortaokulu</div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-label">Akademik Kademe</div>
+                    <div class="grid-value">7. Sınıf</div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-label">Kurum Sicil / Öğrenci No</div>
+                    <div class="grid-value">801</div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-label">Teknik Uzmanlık</div>
+                    <div class="grid-value">3D Baskı & Modelleme</div>
+                </div>
             </div>
-            <div class="info-card">
-                <div class="info-label">Akademik Kademe</div>
-                <div class="info-value">7. Sınıf</div>
-            </div>
-            <div class="info-card">
-                <div class="info-label">Öğrenci No</div>
-                <div class="info-value">801</div>
-            </div>
-            <div class="info-card">
-                <div class="info-label">Teknik Uzmanlık</div>
-                <div class="info-value">3D Baskı & Modelleme</div>
-            </div>
-        </div>
+        </section>
 
         <!-- Eğitim Kampüsü -->
-        <div class="section-title">
-            <i class="fa-solid fa-school" style="color: #58a6ff;"></i> Eğitim Kampüsü
-        </div>
+        <section class="card">
+            <h2 class="card-title">Eğitim Kampüsü</h2>
+            <div class="campus-content">
+                <p class="campus-description">Yenilikçi projelerimin ve teknolojik fikirlerimin temelinin atıldığı değerli eğitim kurumumuz.</p>
+                <div>
+                    <span class="badge-location">Ankara Mamak Şehit Hamza Irmak Ortaokulu</span>
+                </div>
+                <div class="location-subtext">Şehit Hamza Irmak Ortaokulu Ana Giriş Cephesi, Ankara/Mamak</div>
+            </div>
+        </section>
+    </main>
 
-        <div class="campus-box">
-            <div class="info-value" style="font-size: 0.88rem;">Şehit Hamza Irmak Ortaokulu Ana Giriş Cephesi</div>
-            <div class="info-label" style="margin-top: 3px; color: #58a6ff;">Ankara / Mamak</div>
-            <p>
-                Yenilikçi projelerimin ve teknolojik fikirlerimin temelinin atıldığı değerli eğitim kurumumuz.
-            </p>
-        </div>
-
-        <div class="footer">
-            © 2026 Efe Şuşutgil • Şehit Hamza Irmak Ortaokulu
-        </div>
-    </div>
+    <!-- Alt Bilgi -->
+    <footer>
+        © 2026 <span>Efe Şuşutgil</span>. Tüm Hakları Saklıdır. | Resmi Profil Sayfası
+    </footer>
 
 </body>
 </html>
