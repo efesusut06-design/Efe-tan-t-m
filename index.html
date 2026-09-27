@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efe Şuşutgil | Kişisel Web Sitesi</title>
-    <!-- Google Fonts & FontAwesome İkonları -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Efe Şuşutgil - Akademik Portfolyo</title>
+    <!-- FontAwesome İkonları & Google Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -17,252 +17,182 @@
         }
 
         body {
-            background-color: #0b0f19;
-            color: #e2e8f0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 20px 10px;
         }
 
         .container {
             width: 100%;
-            max-width: 480px;
-            background: #111827;
-            border: 1px solid #1f293d;
-            border-radius: 20px;
-            padding: 35px 25px;
-            text-align: center;
+            max-width: 520px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 30px 24px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #3b82f6;
-            padding: 3px;
-            background: #1e293b;
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            border: 2px solid #58a6ff;
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 1.75rem;
+            color: #f0f6fc;
+            font-size: 1.6rem;
             font-weight: 700;
-            color: #f8fafc;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        .title {
-            font-size: 0.95rem;
-            color: #60a5fa;
+        .subtitle {
+            color: #58a6ff;
+            font-size: 0.85rem;
             font-weight: 500;
-            margin-bottom: 18px;
         }
 
-        .bio {
-            font-size: 0.9rem;
-            color: #94a3b8;
+        .welcome-text {
+            background: #21262d;
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            padding: 16px;
+            font-size: 0.85rem;
             line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
-        .skill-tag {
-            background: rgba(30, 41, 59, 0.8);
-            border: 1px solid #334155;
-            color: #cbd5e1;
-            padding: 6px 14px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
+            color: #8b949e;
+            margin-bottom: 24px;
+            text-align: justify;
         }
 
         .section-title {
-            font-size: 1.1rem;
-            color: #f8fafc;
-            margin: 20px 0 15px 0;
-            text-align: left;
+            color: #f0f6fc;
+            font-size: 1rem;
             font-weight: 600;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 8px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
         }
 
-        .projects-container {
-            display: flex;
-            flex-direction: column;
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
-        .project-card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            overflow: hidden;
-            text-align: left;
-            transition: all 0.25s ease;
+        .info-card {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 12px;
         }
 
-        .project-header {
-            padding: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
+        .info-label {
+            font-size: 0.72rem;
+            color: #8b949e;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 0.88rem;
+            color: #f0f6fc;
             font-weight: 600;
-            font-size: 0.95rem;
-            color: #f8fafc;
         }
 
-        .project-header:hover {
-            background: #2563eb;
+        .campus-box {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 20px;
         }
 
-        .project-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-            background: #0f172a;
-            font-size: 0.85rem;
-            color: #94a3b8;
+        .campus-box p {
+            font-size: 0.82rem;
+            color: #8b949e;
             line-height: 1.5;
+            margin-top: 6px;
         }
 
-        .project-content-inner {
-            padding: 14px;
-            border-top: 1px solid #1e293b;
-        }
-
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: #1e293b;
-            color: #f8fafc;
-            text-decoration: none;
-            padding: 14px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: 1px solid #334155;
-            transition: all 0.25s ease;
-        }
-
-        .link-btn:hover {
-            background: #2563eb;
-            border-color: #3b82f6;
-        }
-
-        footer {
-            margin-top: 25px;
+        .footer {
+            text-align: center;
             font-size: 0.75rem;
-            color: #64748b;
+            color: #484f58;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img class="profile-img" src="https://api.dicebear.com/7.x/bottts/svg?seed=Efe" alt="Efe Şuşutgil">
-
-        <h1>Efe Şuşutgil</h1>
-        <div class="title">Yazılım & Oyun Geliştirici</div>
-
-        <p class="bio">
-            Yazılım geliştirme, Python ile oyun yapımı, HTML/CSS web tasarımı ve 3D modelleme ile ilgileniyorum.
-        </p>
-
-        <div class="skills-container">
-            <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
-            <span class="skill-tag"><i class="fa-solid fa-gamepad"></i> Pygame</span>
-            <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</span>
-            <span class="skill-tag"><i class="fa-solid fa-cube"></i> 3D Tasarım</span>
+        <div class="header">
+            <img class="profile-img" src="https://api.dicebear.com/7.x/bottts/svg?seed=Efe" alt="Efe Şuşutgil">
+            <h1>Efe Şuşutgil</h1>
+            <div class="subtitle">Akademik Portfolyo & Dijital Üretim</div>
         </div>
 
+        <!-- Giriş / Karşılama Metni -->
+        <div class="welcome-text">
+            Saygıdeğer ziyaretçiler, portfolyoma hoş geldiniz. Ben Efe Şuşutgil. Teknolojiye ve üretime olan tutkumla, hayal gücümü 3D yazıcı teknolojileriyle somut gerçeğe dönüştürüyorum. Dijital dünyadaki karmaşık tasarımları fiziksel dünyada var eden yenilikçi bir "maker" ruhuna sahibim. Analitik düşünme yeteneğim ve detaylara verdiğim önem sayesinde, mekanik tasarımlarda ve prototip üretim süreçlerinde her zaman en yüksek kaliteyi hedefliyorum. Sadece tüketen değil, aynı zamanda üreten bir neslin temsilcisi olarak, mühendislik ve inovasyon alanında okulumu en iyi şekilde temsil ediyorum.
+        </div>
+
+        <!-- Akademik Profil & Uzmanlık -->
         <div class="section-title">
-            <i class="fa-solid fa-code-branch" style="color: #60a5fa;"></i> Çalışmalarım & Projelerim
+            <i class="fa-solid fa-graduation-cap" style="color: #58a6ff;"></i> Akademik Profil & Uzmanlık
         </div>
 
-        <div class="projects-container">
-            <!-- Proje 1 -->
-            <div class="project-card">
-                <div class="project-header" onclick="toggleProject(this)">
-                    <span><i class="fa-solid fa-gamepad"></i> HeyHay (Ses Tahmin Oyunu)</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="project-content">
-                    <div class="project-content-inner">
-                        Python ve Pygame kütüphanesi kullanılarak geliştirilmiş, özel ses efektleri ve görseller içeren 2D ses tahmin oyunu.
-                    </div>
-                </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-label">Eğitim Kurumu</div>
+                <div class="info-value">Şehit Hamza Irmak Ortaokulu</div>
             </div>
-
-            <!-- Proje 2 -->
-            <div class="project-card">
-                <div class="project-header" onclick="toggleProject(this)">
-                    <span><i class="fa-solid fa-cube"></i> 3D Baskı ve Modelleme</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="project-content">
-                    <div class="project-content-inner">
-                        Revit ve 3D modelleme yazılımları ile tasarlanmış, PLA filament ile üretilen özel 3D ürünler ve aparatlar.
-                    </div>
-                </div>
+            <div class="info-card">
+                <div class="info-label">Akademik Kademe</div>
+                <div class="info-value">7. Sınıf</div>
             </div>
-
-            <!-- Proje 3 -->
-            <div class="project-card">
-                <div class="project-header" onclick="toggleProject(this)">
-                    <span><i class="fa-solid fa-globe"></i> Kişisel Web Sitesi</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="project-content">
-                    <div class="project-content-inner">
-                        HTML5, CSS3 ve JavaScript kullanılarak hazırlanmış, GitHub Pages üzerinde yayınlanan kişisel portfolyo sitesi.
-                    </div>
-                </div>
+            <div class="info-card">
+                <div class="info-label">Öğrenci No</div>
+                <div class="info-value">801</div>
+            </div>
+            <div class="info-card">
+                <div class="info-label">Teknik Uzmanlık</div>
+                <div class="info-value">3D Baskı & Modelleme</div>
             </div>
         </div>
 
-        <div class="links-container">
-            <a href="https://github.com/efesusut06-design" class="link-btn" target="_blank">
-                <i class="fa-brands fa-github"></i> GitHub Profilim
-            </a>
+        <!-- Eğitim Kampüsü -->
+        <div class="section-title">
+            <i class="fa-solid fa-school" style="color: #58a6ff;"></i> Eğitim Kampüsü
         </div>
 
-        <footer>
-            © 2026 Efe Şuşutgil • Tüm Hakları Saklıdır
-        </footer>
+        <div class="campus-box">
+            <div class="info-value" style="font-size: 0.85rem;">Şehit Hamza Irmak Ortaokulu Ana Giriş Cephesi</div>
+            <div class="info-label" style="margin-top: 2px;">Ankara / Mamak</div>
+            <p>
+                Yenilikçi projelerimin ve teknolojik fikirlerimin temelinin atıldığı değerli eğitim kurumumuz.
+            </p>
+        </div>
+
+        <div class="footer">
+            © 2026 Efe Şuşutgil • Şehit Hamza Irmak Ortaokulu
+        </div>
     </div>
 
-    <!-- Tıklama İşlevi (JavaScript) -->
-    <script>
-        function toggleProject(header) {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('.fa-chevron-down');
-
-            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-                content.style.maxHeight = '0px';
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                icon.style.transform = 'rotate(180deg)';
-            }
-        }
-    </script>
 </body>
-</html>
-</html>
+</html> 
